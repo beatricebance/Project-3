@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_home_theme"
+    android:orientation="horizontal"
+    tools:context=".ui.home.fragments.userProfile.UserProfileFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@color/container"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/parametredecompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/compte_parameter"
+            android:textColor="#EC407A"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/modifyprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/edit_profil"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/edit_password"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/historique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/history_log"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/newLayout"
+        android:layout_margin="20dp"
+        android:background="@color/mainTheme"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<h1 mat-dialog-title>Create your own collaboration team!</h1>
+
+<form [formGroup]="newTeamForm" (ngSubmit)="onAccept()">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Team Name</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Team Name"
+        formControlName="name"
+      />
+      <mat-error *ngIf="this.newTeamForm.hasError('required', 'teamName')"
+        >Team name required
+      </mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Description"
+        formControlName="description"
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-checkbox (change)="toggleMemberLimit()" class="limit-checkbox"
+      >Limit the number of members that can join?</mat-checkbox
+    >
+    <mat-form-field appearance="outline">
+      <mat-label>Member limit</mat-label>
+      <input
+        type="number"
+        [min]="1"
+        matInput
+        placeholder="Member limit"
+        formControlName="memberLimit"
+      />
+      <mat-error *ngIf="this.newTeamForm.hasError('min', 'memberLimit')"
+        >Your team must have a minimum of 1 member!</mat-error
+      >
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-checkbox
+      (change)="togglePrivacy()"
+      class="limit-checkbox"
+      formControlName="isPrivate"
+      >Set the team as private?</mat-checkbox
+    >
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Team password"
+        formControlName="password"
+      />
+    </mat-form-field>
+  </p>
+  <div>
+    <button type="submit" mat-raised-button color="primary">Create team</button>
+  </div>
+</form>

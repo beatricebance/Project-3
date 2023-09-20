@@ -1,0 +1,63 @@
+.form-input {
+  display: block;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.input-table {
+  width: 100%;
+}
+
+.form-input .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.filled-form-input {
+  width: 100%;
+}
+
+#register-form {
+  width: 700px;
+  height: 480px;
+}
+
+#register-mat-card.mat-card {
+  border-radius: 15px;
+  background-color: #fef9f7;
+}
+
+#title-card {
+  color: #924642;
+  font-size: 36px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#register-card {
+  color: #5b4d5a;
+  font-size: 24px;
+  padding-bottom: 1%;
+}
+
+#login-redirect {
+  font-size: 18px;
+}
+
+#login-link .button {
+  color: #924642;
+}
+
+#register-button {
+  text-align: right;
+  position: relative;
+}
+
+.register-body {
+  background-image: url("../../../../assets/backgrounds/auth-background.png");
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

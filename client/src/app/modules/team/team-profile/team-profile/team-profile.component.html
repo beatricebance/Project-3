@@ -1,0 +1,85 @@
+<div id="team-profile" *ngIf="teamLoaded | async">
+  <div id="team-header" fxLayout="row grid" fxLayoutAlign="center center">
+    <div fxFlex="11%" id="avatar">
+      <ngx-avatar [name]="this.team.name" size="150"></ngx-avatar>
+    </div>
+    <div fxFlex="11%">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxFlex="100%">
+          <h2>{{ this.team.name }}</h2>
+        </div>
+        <div fxLayout="row grid" fxLayoutAlign="center center">
+          <div>
+            <button mat-button (click)="openMemberList()">
+              {{ this.team.members.length }} members
+            </button>
+          </div>
+        </div>
+        <div fxFlex="100%" style="text-align: center">
+          <p>{{ this.team.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="11%" style="text-align: center">
+      <div fxLayout="column" fxLayoutGap="12px" fxLayoutAlign="center center">
+        <button
+          mat-raised-button
+          color="warn"
+          *ngIf="isOwner()"
+          (click)="openConfirmDeleteDialog()"
+        >
+          Delete team
+        </button>
+
+        <button mat-raised-button color="primary">Follow</button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="openConfirmJoinDialog()"
+          *ngIf="!isAlreadyJoined() && !isTeamFull()"
+        >
+          Join team
+        </button>
+
+        <button
+          mat-raised-button
+          color="warn"
+          *ngIf="isAlreadyJoined() && !isOwner()"
+          (click)="openConfirmLeaveDialog()"
+        >
+          Leave
+        </button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          disabled
+          *ngIf="isTeamFull() && !isAlreadyJoined()"
+        >
+          Team full
+        </button>
+      </div>
+    </div>
+  </div>
+  <br />
+  <!-- TODO: Add the teams drawings here -->
+  <div id="team-drawings">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="All Drawings">
+        <div fxLayout="row wrap" id="drawings" fxLayout.sm="column wrap">
+          <div
+            fxFlex="33%"
+            fxFlex.sm="100%"
+            fxFlex.md="50%"
+            *ngFor="let drawing of team.drawings"
+            class="team-drawing-card"
+          >
+            <app-drawing-card [drawing]="drawing"></app-drawing-card>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Published Drawings"> </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

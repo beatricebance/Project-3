@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/card_museum_post"
+    android:background="@color/mainTheme"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/museumCurrentNb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="12dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textAlignment="center" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/museumMainCard"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="450dp"
+        app:layout_constraintWidth_percent="0.92"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/mainTheme"
+        app:contentPadding="2dp">
+        <LinearLayout
+            android:background="@color/mainTheme"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/postImageCardView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".70"
+                app:cardBackgroundColor="@color/white"
+                android:background="@color/mainTheme"
+                android:elevation="12dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/postImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_weight=".30"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/primary"
+                android:layout_marginLeft="15dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="10dp"
+                android:background="@color/mainTheme" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.1"
+                        android:background="@drawable/border_bottom">
+
+                        <TextView
+                            android:id="@+id/museum_post_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toLeftOf="@id/museum_post_like"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@+id/museum_post_like"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_centerVertical="true">
+
+                            <ImageButton
+                                android:id="@+id/museum_post_like_outline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#EEE"
+                                android:src="@drawable/ic_heart_outline" />
+
+                            <ImageButton
+                                android:visibility="gone"
+                                android:id="@+id/museum_post_like_filled"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#EEE"
+                                android:src="@drawable/ic_heart_filled" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/museum_comments_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.8"
+                        android:background="@color/white" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.1"
+                        android:background="@color/white"
+                        android:paddingBottom="5dp">
+
+                        <EditText
+                            android:id="@+id/post_comment_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@id/post_comment_btn"
+                            android:background="@drawable/chat_edit_text"
+                            android:hint="Leave a comment"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:padding="10px"
+                            android:textSize="13dp" />
+
+                        <Button
+                            android:id="@+id/post_comment_btn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/ic_send" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

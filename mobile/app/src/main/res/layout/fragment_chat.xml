@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.fragments.chat.ChatFragment"
+    android:id="@+id/chatChannelFragment"
+    android:background="@color/mainTheme">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/chat_sidebar"
+            android:layout_width="400px"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true" >
+
+            <RelativeLayout
+                android:id="@+id/chat_sidebar_header"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="CHANNELS"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/channel_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/primary"
+                    android:drawableEnd="@drawable/ic_add"
+                    android:text="Add"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/chat_sidebar_header"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/chat_header_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/chat_all_channels_btn"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:backgroundTint="@color/white"
+                        android:textColor="#888888"
+                        app:cornerRadius="0dp"
+                        android:text="ALL" />
+
+                    <Button
+                        android:id="@+id/chat_connected_channels_btn"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:backgroundTint="@color/white"
+                        android:textColor="#888888"
+                        app:cornerRadius="0dp"
+                        android:text="CONNECTED" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ChannelRecycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/chat_header_type" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/chat_channel_framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/chat_sidebar"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="3px"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

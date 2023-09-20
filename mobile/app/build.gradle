@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'androidx.navigation.safeargs.kotlin'
+
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.colorimagemobile"
+        minSdk 26
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // newly added dependencies
+    // socket.io for Web Sockets
+    implementation ('io.socket:socket.io-client:2.0.1') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    // Retrofit for HTTP requests
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+    // for recycler view
+    //noinspection GradleCompatible
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    // color palette: https://github.com/duanhong169/ColorPicker
+    implementation 'com.github.duanhong169:colorpicker:1.1.6'
+
+    // Android Base64 svg+xml to Bitmap: https://bigbadaboom.github.io/androidsvg/
+    implementation 'com.caverock:androidsvg-aar:1.4'
+
+    // XML - JSON: https://github.com/javadev/underscore-java
+    implementation 'com.github.javadev:underscore:1.71'
+
+    // material dialogs
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+
+    // Picasso for image handling: https://square.github.io/picasso/
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // circular image for avatar library
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // user permission
+    implementation 'com.karumi:dexter:6.2.3'
+
+    //coil
+    implementation("io.coil-kt:coil:1.1.1")
+
+    // for notification sound
+    implementation('org.jetbrains.kotlin:kotlin-stdlib:1.5.0')
+
+}

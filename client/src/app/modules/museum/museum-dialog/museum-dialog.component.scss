@@ -1,0 +1,33 @@
+.inputDiv {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 15px;
+  :nth-child(1){
+    width: 80%;
+  }
+  :nth-child(2){
+    width:20%;
+  }
+}
+
+.postbtn{
+  background-color: transparent;
+  color: #DA7E70;
+  border:none
+}
+
+.postbtn:hover{
+  cursor: pointer;
+  color: #924642;
+}
+
+#postName{
+  border: none;
+  border-radius: 10px;
+  background-color: #FEF9F7;
+  padding: 3px;
+}
+
+#postName:focus{
+  outline:none
+}

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.fragments.chat.ChatMessageBoxFragment">
+
+    <RelativeLayout
+        android:id="@+id/chat_box_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5px"
+        android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/chat_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp" >
+
+            <RelativeLayout
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/chat_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10px"
+                    android:paddingTop="15px"
+                    android:paddingBottom="15px"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/channel_load_more_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/channel_leave_btn_main"
+                    android:backgroundTint="#0b96cf"
+                    android:drawableEnd="@drawable/ic_message_plus"
+                    android:text="Load previous messages"
+                    android:textColor="#c5e7e8" />
+
+                <RelativeLayout
+                    android:id="@+id/channel_leave_btn_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/channel_delete_btn_main" >
+
+                    <Button
+                        android:id="@+id/channel_leave_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:backgroundTint="@color/primary"
+                        android:drawableEnd="@drawable/ic_close"
+                        android:text="Leave Room"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/channel_delete_btn_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true">
+
+                    <Button
+                        android:id="@+id/channel_delete_btn"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/danger"
+                        android:drawableEnd="@drawable/ic_trash"
+                        android:layout_marginLeft="10dp"
+                        android:text="Delete Channel"
+                        android:textColor="@color/dangerText" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/chat_message_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/chat_footer"
+            android:layout_below="@id/chat_header"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chat_message_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/chat_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" >
+
+            <EditText
+                android:id="@+id/chat_text_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:layout_toLeftOf="@id/chat_sent_btn"
+                android:background="@drawable/chat_edit_text"
+                android:hint="Enter your message here"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="20px" />
+
+            <Button
+                android:id="@+id/chat_sent_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_send" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

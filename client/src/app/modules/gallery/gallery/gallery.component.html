@@ -1,0 +1,33 @@
+<div id="gallery">
+  <div id="gallery-header" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="30%" id="section">
+      <h1>Gallery</h1>
+      <p>
+        Welcome to the gallery! This is where you can see and join the drawings
+        that users are working on!
+      </p>
+    </div>
+    <div fxFlex="30%" id="create-button">
+      <button mat-raised-button color="primary" (click)="createNewDrawing()">
+        Create a drawing
+      </button>
+    </div>
+  </div>
+  <hr />
+  <div
+    id="drawingsContainer"
+    fxLayout="row wrap"
+    fxLayout.sm="column wrap"
+    fxLayoutGap="33px grid"
+  >
+    <div
+      fxFlex="33%"
+      fxFlex.xs="100%"
+      fxFlex.sm="50%"
+      fxFlex.md="50%"
+      *ngFor="let drawing of drawings"
+    >
+      <app-drawing-card [drawing]="drawing"></app-drawing-card>
+    </div>
+  </div>
+</div>

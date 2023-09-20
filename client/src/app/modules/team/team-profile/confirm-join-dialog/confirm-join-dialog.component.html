@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>
+  Are you sure you want join <i>{{ data.team.name }} </i>
+</h1>
+<p *ngIf="!data.team.isPrivate">
+  The owner has set this team public. Looks like anyone can join!
+</p>
+<div *ngIf="data.team.isPrivate">
+  <p>
+    The owner has set this team to protected. Enter the correct password to
+    join!
+  </p>
+  <form [formGroup]="teamPasswordForm" (ngSubmit)="joinTeam()">
+    <div>
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>Enter the team's password</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Team Password"
+          formControlName="teamPassword"
+        />
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div>
+  <mat-dialog-actions align="end">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="joinTeam()"
+    >
+      Join
+    </button>
+    <button mat-raised-button color="accent" (click)="onCancel()">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</div>

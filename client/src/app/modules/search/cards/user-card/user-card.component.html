@@ -1,0 +1,10 @@
+<mat-card class="user-card" (click)="goToUserProfile()">
+  <mat-card-header>
+    <mat-card-title>
+      <ngx-avatar [src]="this.user.avatar.imageUrl"></ngx-avatar>
+    </mat-card-title>
+    <mat-card-content>
+      <h2>{{ this.user.username }}</h2>
+    </mat-card-content>
+  </mat-card-header>
+</mat-card>

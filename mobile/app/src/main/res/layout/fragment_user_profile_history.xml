@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/container"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/thisContext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+          <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="327dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/last_login"
+                    android:textSize="30sp" />
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  />
+
+
+              <TextView
+                    android:layout_width="394dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/last_logout"
+                    android:textSize="30sp" />
+          </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lastLogin"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textSize="30sp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/lastLogout"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_weight="1"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="448dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/last_edition_date"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,131 @@
+:host ::ng-deep.mat-icon-button {
+  min-width: 30%;
+}
+
+#chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  z-index: 9;
+  width: 230px;
+  box-shadow :0 0 5px rgba(0,0,0,0.4);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: rgba(255,255,255,0.8);
+}
+
+.chat-top{
+  background-color: rgba(#DEDEDE,0.8);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display:flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-top>:nth-child(1){
+  width: max-content;
+  margin-left: 10px;
+}
+
+
+#chatbox {
+  text-align: left;
+  font: 12px arial;
+  margin: 0 auto;
+  padding: 10px;
+  height: 270px;
+  width: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.8);
+}
+
+.buttonContainer {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: #924642;
+  &>*{
+    color: #924642;
+  }
+}
+
+#message {
+  display:flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  //background-color: rgba(255,255,255,0.4);
+  border-top: 2px black;
+}
+
+input[type=text]{
+  border: none;
+}
+
+.time{
+  color:grey;
+  font: 10px bold ;
+  align-self: flex-end;
+  margin-right:10px;
+}
+
+#new-message-form{
+  background-color: #fef9f7;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#new-message-input{
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+#new-message-input:focus{
+  outline: none;
+}
+
+.user, .other{
+  display:flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 8px;
+  align-self: flex-end;
+}
+
+.user{
+  justify-content: right;
+}
+
+.other{
+  justify-content: left;
+}
+
+.user > .messageBox {
+  border-radius: 10px 10px 0px 10px;
+  background-color: #A5A6F6;
+}
+
+.other > .messageBox {
+  border-radius: 0px 10px 10px 10px;
+  background-color: #FCEDEA;
+}
+
+.messageBox {
+  width: 90%;
+  padding: 10px 5px 10px 5px;
+}
+
+#chatbox > *{
+  display:flex;
+  flex-direction: column;
+}
+
+#loadHistory:hover {
+  cursor: pointer;
+}

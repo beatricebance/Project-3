@@ -1,0 +1,12 @@
+<h1 style="color: #924642">Choose an avatar!</h1>
+<div fxLayout="row wrap" fxLayoutGap="24px grid">
+  <div *ngFor="let avatar of data.avatars">
+    <div fxFlex="33.3%" class="avatar">
+      <ngx-avatar
+        [src]="avatar.imageUrl"
+        size="125"
+        (clickOnAvatar)="onAvatarClicked($event)"
+      ></ngx-avatar>
+    </div>
+  </div>
+</div>

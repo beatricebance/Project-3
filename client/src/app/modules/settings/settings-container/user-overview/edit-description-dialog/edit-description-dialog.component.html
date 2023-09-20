@@ -1,0 +1,29 @@
+<div>
+  <h1>Change your description</h1>
+  <p>Describe yourself!</p>
+</div>
+
+<form [formGroup]="descriptionForm" (ngSubmit)="onAccept()">
+  <div mat-dialog-content>
+    <div mat-dialog-content>
+      <p>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label *ngIf="data.description">Description</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter a description"
+            formControlName="description"
+          />
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+
+  <mat-dialog-actions align="end">
+    <button mat-raised-button color="accent" type="button" (click)="onCancel()">
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit">Confirm</button>
+  </mat-dialog-actions>
+</form>

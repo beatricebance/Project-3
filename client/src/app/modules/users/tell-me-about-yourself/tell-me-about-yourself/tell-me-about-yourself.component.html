@@ -1,0 +1,40 @@
+<mat-grid-list cols="1" rowHeight="100%">
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title id="title-card">Tell us about yourself</mat-card-title>
+      <mat-card-content>
+        <app-avatar
+          [currentUser]="currentUser"
+          (currentAvatarChanged)="updateUserAvatar($event)"
+        ></app-avatar>
+        <form
+          [formGroup]="customizeProfileForm"
+          (ngSubmit)="onSubmit()"
+          id="customize-form"
+        >
+          <div id="user-description-input">
+            <mat-form-field appearance="outline">
+              <mat-label>Description</mat-label>
+              <textarea
+                matInput
+                placeholder="Description"
+                formControlName="description"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          <div id="skip-redirect">
+            <p>
+              Don't feel like it?
+              <button mat-button id="skip-link" routerLink="/">Skip</button>
+            </p>
+          </div>
+          <div id="customize-button" class="button">
+            <button type="submit" mat-raised-button color="primary">
+              Customize
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

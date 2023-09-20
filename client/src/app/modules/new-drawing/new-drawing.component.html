@@ -1,0 +1,88 @@
+<h1 mat-dialog-title>Create a new drawing!</h1>
+
+<form [formGroup]="form" (ngSubmit)="onAccept()">
+  <div mat-dialog-content>
+    <div>
+      <h1 mat-dialog-title>Name your drawing!</h1>
+      <mat-form-field appearance="outline" class="formInput" style="width: 50%">
+        <mat-label>Drawing Name</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Drawing Name"
+          formControlName="name"
+        />
+        <mat-error *ngIf="this.form.getError('required', 'name')"
+          >A drawing name is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <h1 mat-dialog-title>Assign the owner of the drawing.</h1>
+      <p>By default, the owner of the drawing is assigned to you, the user.</p>
+      <mat-checkbox (change)="toggleOwnerModel()" style="padding-bottom: 10px">
+        Would you like to assign this drawing to one of your collaboration
+        teams?
+      </mat-checkbox>
+      <mat-form-field>
+        <mat-label>Team name</mat-label>
+        <mat-select formControlName="owner">
+          <mat-option value="{{ team._id }}" *ngFor="let team of teams">{{
+            team.name
+          }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.form.hasError('emptyTeam')"
+          >You must select a team</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <h1 mat-dialog-title>Set the privacy of your drawing</h1>
+      <p>By default, a public drawing means anyone can join and collaborate.</p>
+      <p>A protected drawing sets a password that restricts collaboration.</p>
+
+      <p>
+        A private drawing restricts collaboration entirely to outside users.
+      </p>
+      <li class="mat-form-field--inline">
+        <mat-form-field>
+          <mat-label>Privacy Level</mat-label>
+          <mat-select
+            [(value)]="privacyLevel"
+            (selectionChange)="changePrivacyLevel()"
+            formControlName="privacyLevel"
+          >
+            <mat-option value="public">Public</mat-option>
+            <mat-option value="protected">Protected</mat-option>
+            <mat-option value="private">Private</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Drawing Password</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Drawing password"
+            formControlName="password"
+          />
+        </mat-form-field>
+      </li>
+    </div>
+    <h2 class="mat-h2">Background color</h2>
+    <app-color-picker style="text-align: center"> </app-color-picker>
+    <mat-divider></mat-divider>
+  </div>
+  <mat-dialog-actions align="end">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Créer
+    </button>
+    <button mat-raised-button color="accent" type="button" (click)="onCancel()">
+      Annuler
+    </button>
+  </mat-dialog-actions>
+</form>

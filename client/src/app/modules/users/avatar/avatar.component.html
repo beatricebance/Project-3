@@ -1,0 +1,19 @@
+<div fxLayout="grid wrap" class="avatar-section">
+  <div fxFlex="25%" class="avatar-choice">
+    <ngx-avatar [src]="this.currentAvatar.imageUrl" size="125"></ngx-avatar>
+  </div>
+  <div fxFlex="25%" class="avatar-choice">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="openChooseAvatarDialog()"
+    >
+      Choose an avatar
+    </button>
+  </div>
+  <div fxFlex="25%" class="avatar-choice">
+    <app-file-upload
+      (uploadedAvatarEvent)="uploadedAvatar($event)"
+    ></app-file-upload>
+  </div>
+</div>

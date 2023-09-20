@@ -1,0 +1,65 @@
+<div id="channel-overlay">
+  <div class="channel-top" id="channel-top" >
+    <p>Channels</p>
+    <button mat-icon-button (click)="openAddChannelModal()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+    
+    <mat-tab-group mat-align-tabs="start">
+      <mat-tab label="All">
+        <form id="search-bar" (ngSubmit)="searchChannels()">
+          <button mat-icon-button class="icon" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+          <input
+            #searchInput
+            type="search"
+            id="search-input"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Search channels"
+            [(ngModel)]="this.searchQuery"
+            name="search"
+          />
+        </form>
+        <div *ngIf="searchedChannels.length == 0">
+          <p>Couldn't find any channels corresponding to that search.</p>
+        </div>
+        <div fxLayout="row wrap"
+        fxLayoutAlign="center center"
+        class="channel-list">
+          <div *ngFor="let channel of searchedChannels">
+            <div class="channel" (click)="openChannel(channel);">
+              <p>{{channel.name}}</p>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Connected">
+        <div fxLayout="row wrap"
+            fxLayoutAlign="center center" 
+            class="channel-list" 
+            >
+          <div *ngFor="let channel of connectedChannels">
+            <div class="channel" 
+              (mouseover)="toggleChannelButton(channel, true)" 
+              (mouseout)="toggleChannelButton(channel, false)"
+              (click)="openChannel(channel)">
+              <p (click)="openChannel(channel)">{{channel.name}}</p>
+              <div class="deleteChannelBtn" [id]="channel.name">
+                <button mat-icon-button 
+                  (click)="removeChannel(channel)" 
+                  [ngStyle]="{'display': channel.ownerId === this.user?._id ? 'inline' : 'none'}">
+                  <mat-icon>clear</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteChannel(channel)" >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>

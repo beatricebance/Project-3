@@ -1,0 +1,127 @@
+mat-card {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+
+  border-radius: 10%;
+}
+
+mat-card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10%;
+}
+
+.drawing {
+  position: relative;
+}
+
+.drawing-img {
+  display: block;
+}
+
+.drawing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.25s;
+
+  border-radius: 10%;
+}
+
+.drawing-overlay:hover > * {
+  opacity: 1;
+}
+
+.drawing-overlay:hover {
+  opacity: 1;
+}
+
+mat-card-title {
+  padding-left: 10%;
+  padding-top: 10%;
+}
+
+.drawing-name {
+  font-size: 1em;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.drawing-name:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.drawing-creation-date {
+  font-size: 0.5em;
+}
+
+.drawing-menu {
+  position: absolute;
+  padding-right: 10%;
+  padding-top: 10%;
+  right: 0;
+}
+
+#settings-icon {
+  color: #ffffff;
+}
+
+#settings-icon:hover {
+  opacity: 0.6;
+}
+
+.drawing-privacy-level {
+  font-size: 1em;
+  position: absolute;
+  padding-left: 10%;
+  padding-bottom: 10%;
+  left: 0;
+  bottom: 0;
+}
+
+.drawing-lock {
+  position: absolute;
+  font-size: 3em;
+  margin: 0;
+  top: 46%;
+  left: 46%;
+}
+
+.drawing-owner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+  padding-bottom: 10%;
+  padding-right: 10%;
+
+  cursor: pointer;
+}
+
+.drawing-owner:hover {
+  opacity: 0.8;
+}
+
+.name {
+  padding-left: 5px;
+  padding-top: 14%;
+}
+
+.inline-block-child {
+  float: left;
+  vertical-align: middle;
+}

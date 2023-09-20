@@ -1,0 +1,63 @@
+<h1 mat-dialog-title>
+  Editing the drawing parameters of <i>{{ this.data.drawing.name }}</i>
+</h1>
+<form [formGroup]="drawingForm" (ngSubmit)="updateDrawingParameters()">
+  <div mat-dialog-content>
+    <div>
+      <mat-form-field
+        appearance="outline"
+        class="formInput"
+        style="width: 100%"
+      >
+        <mat-label>Drawing Name</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Drawing Name"
+          formControlName="name"
+          [value]="this.data.drawing.name"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <li class="mat-form-field--inline">
+        <mat-form-field>
+          <mat-label>Privacy Level</mat-label>
+          <mat-select
+            [(value)]="privacyLevel"
+            (selectionChange)="changePrivacyLevel()"
+            formControlName="privacyLevel"
+          >
+            <mat-option value="public">Public</mat-option>
+            <mat-option value="protected">Protected</mat-option>
+            <mat-option value="private">Private</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Drawing Password</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Drawing password"
+            formControlName="password"
+          />
+        </mat-form-field>
+      </li>
+    </div>
+  </div>
+</form>
+<div>
+  <mat-dialog-actions align="end">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="updateDrawingParameters()"
+    >
+      Update
+    </button>
+    <button mat-raised-button color="accent" (click)="onCancel()">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</div>

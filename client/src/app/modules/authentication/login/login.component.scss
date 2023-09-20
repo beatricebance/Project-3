@@ -1,0 +1,52 @@
+.formInput {
+  display: block;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.mat-card:not([class*="mat-elevation-z"]) {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+#titleCard {
+  color: #924642;
+  font-size: 36px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#login {
+  color: #5b4d5a;
+  font-size: 24px;
+  padding-bottom: 1%;
+}
+
+#loginForm {
+  width: 500px;
+  height: 300px;
+}
+
+#loginButton {
+  text-align: right;
+  position: relative;
+}
+
+#registerRedirect {
+  font-size: 18px;
+}
+
+#registerLink .button {
+  color: #924642;
+}
+
+.login-body {
+  background-image: url(../../../../assets/backgrounds/auth-background.png);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

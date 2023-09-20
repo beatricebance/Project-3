@@ -1,0 +1,38 @@
+<div id="teams">
+  <div id="team-header" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="30%" id="section">
+      <h1>Collaborations Teams</h1>
+    </div>
+    <div fxFlex="30%" id="create-button">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openCreateTeamDialog()"
+      >
+        Create a team
+      </button>
+    </div>
+  </div>
+  <br />
+  <div fxLayout="row wrap" fxLayout.sm="columnm wrap" fxLayoutGap="33px grid">
+    <div
+      class="team-card"
+      fxFlex="33%"
+      fxFlex.xs="100%"
+      fxFlex.sm="50%"
+      *ngFor="let team of teams"
+    >
+      <mat-card class="mat-elevation-z2 team">
+        <mat-card-header>
+          <mat-card-title (click)="goToTeam(team._id)"
+            >{{ team.name }}
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>{{ team.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

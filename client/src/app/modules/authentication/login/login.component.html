@@ -1,0 +1,53 @@
+<app-authentication-navbar></app-authentication-navbar>
+<body class="login-body">
+  <mat-grid-list cols="2">
+    <mat-grid-tile><mat-card-title></mat-card-title></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="login-mat-card">
+        <mat-card-title id="titleCard">ColorImage</mat-card-title>
+        <mat-card-title id="login">Login</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="loginForm">
+            <p>
+              <mat-form-field appearance="outline" class="formInput">
+                <mat-label>Username</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Username"
+                  formControlName="username"
+                />
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline" class="formInput">
+                <mat-label>Password</mat-label>
+                <input
+                  type="password"
+                  matInput
+                  placeholder="Password"
+                  formControlName="password"
+                />
+              </mat-form-field>
+            </p>
+
+            <div id="registerRedirect">
+              <p>
+                New to ColorImage?
+                <button mat-button id="registerLink" routerLink="/register">
+                  GET STARTED
+                </button>
+              </p>
+            </div>
+
+            <div class="button" id="loginButton">
+              <button type="submit" mat-raised-button color="primary">
+                Login
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</body>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    android:id="@+id/post_comment_main"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    app:cardElevation="1dp"
+    android:background="@color/black"
+    app:contentPadding="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:layout_marginTop="5dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/post_comment_author_image_main"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:elevation="12dp"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1.9"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="40dp">
+
+            <ImageView
+                android:id="@+id/post_comment_author_image"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/post_comment_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/post_comment_date"
+            android:layout_toRightOf="@id/post_comment_author_image_main"
+            android:textColor="#6d6d6d"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/post_comment_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:textSize="12sp"
+            android:textColor="#6d6d6d" />
+
+        <TextView
+            android:id="@+id/post_comment_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/post_comment_author"
+            android:layout_toRightOf="@id/post_comment_author_image_main"
+            android:textSize="16sp"
+            android:textColor="#000" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

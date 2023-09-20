@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>
+  You're about to join <i>{{ data.drawing.name }} </i>'s collaborative session.
+</h1>
+<p>The owner has set the privacy level of this drawing to protected.</p>
+<p>Enter the correct password to gain access to this session.</p>
+<form [formGroup]="collaborativeSessionForm" (ngSubmit)="joinSession()">
+  <div>
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Enter the session's password</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Password"
+        formControlName="drawingPassword"
+      />
+      <mat-error
+        *ngIf="
+          this.collaborativeSessionForm.hasError(
+            'wrongPassword',
+            'drawingPassword'
+          )
+        "
+        >You entered the wrong password.</mat-error
+      >
+    </mat-form-field>
+  </div>
+</form>
+<div>
+  <mat-dialog-actions align="end">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="joinSession()"
+    >
+      Join
+    </button>
+    <button mat-raised-button color="accent" (click)="onCancel()">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,13 @@
+.mat-badge.hide-text .mat-badge-content {
+  color: transparent;
+}
+
+// Hardcoded values, don't ask why
+.hide-text {
+  min-width: 42px;
+  min-height: 42px;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+  top: -3px;
+}

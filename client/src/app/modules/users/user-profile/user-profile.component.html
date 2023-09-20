@@ -1,0 +1,41 @@
+<div id="user-profile" *ngIf="userLoaded | async">
+  <div id="team-header" fxLayout="row grid" fxLayoutAlign="center center">
+    <div fxFlex="13%" style="text-align: center">
+      <ngx-avatar [src]="this.user.avatar?.imageUrl" [size]="150"></ngx-avatar>
+    </div>
+    <div fxFlex="13%">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxFlex="100%">
+          <h2>{{ this.user.username }}</h2>
+        </div>
+        <div fxLayout="row grid" fxLayoutAlign="center center">
+          <div>
+            <p>999 followers</p>
+          </div>
+        </div>
+        <div fxFlex="100%" style="text-align: center">
+          <p>{{ this.user.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="13%" style="text-align: center">
+      <div fxLayout="column" fxLayoutGap="12px" fxLayoutAlign="center center">
+        <button mat-raised-button color="primary">Follow</button>
+      </div>
+    </div>
+  </div>
+  <br />
+  <!-- TODO: Add the teams drawings here -->
+  <div id="user-drawings">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="All Drawings">
+        <div fxLayout="row wrap" id="drawings">
+          <div fxFlex="33%" *ngFor="let drawing of user.drawings">
+            <app-drawing-card [drawing]="drawing"></app-drawing-card>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Published Drawings"> </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

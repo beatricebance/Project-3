@@ -1,0 +1,78 @@
+<div id="user-history" *ngIf="userLoaded | async">
+  <mat-card-title style="padding-left: 50px; padding-bottom: 40px">
+    User History
+  </mat-card-title>
+
+  <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="50px">
+    <mat-card id="connection-history-card">
+      <mat-card-content>
+        <mat-card-title> Connection history </mat-card-title>
+        <div>
+          <mat-card id="connection-history">
+            <mat-card-content>
+              <div fxLayout="column" fxLayoutAlign="center">
+                <div fxFlex="33%">
+                  <div fxLayout="row wrap">
+                    <div fxFlex="50%">
+                      <mat-card-subtitle>Last Login</mat-card-subtitle>
+                    </div>
+                    <div fxFlex="50%">
+                      {{ currentUser.lastLogin }}
+                    </div>
+                  </div>
+                </div>
+                <div fxFlex="33%">
+                  <div fxLayout="row wrap">
+                    <div fxFlex="50%">
+                      <mat-card-subtitle>Last Logout</mat-card-subtitle>
+                    </div>
+                    <div fxFlex="50%">
+                      {{ currentUser.lastLogout }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card id="collaboration-history-card">
+      <mat-card-content>
+        <mat-card-title> Collaboration history </mat-card-title>
+        <div>
+          <mat-card id="collaboration-history">
+            <mat-card-content>
+              <div fxLayout="column" fxLayoutAlign="center">
+                <div
+                  fxFlex="33%"
+                  *ngFor="
+                    let collaborationHistory of currentUser.collaborationHistory
+                      | slice
+                        : currentUser.collaborationHistory.length - 3
+                        : currentUser.collaborationHistory.length
+                  "
+                >
+                  <div fxLayout="row wrap">
+                    <div fxFlex="50%">
+                      <mat-card-subtitle
+                        (click)="goToDrawing(collaborationHistory.drawing._id)"
+                        style="cursor: pointer"
+                        >{{
+                          collaborationHistory.drawing.name
+                        }}</mat-card-subtitle
+                      >
+                    </div>
+                    <div fxFlex="50%">
+                      {{ collaborationHistory.collaboratedAt }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

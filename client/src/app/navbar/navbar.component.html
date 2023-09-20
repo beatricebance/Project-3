@@ -1,0 +1,60 @@
+<mat-toolbar id="nav-bar" color="primary" *ngIf="user">
+  <div>
+    <span id="main-logo">ColorImage</span>
+  </div>
+  <span class="menu-spacer"></span>
+  <span class="menu-spacer"></span>
+  <span class="menu-spacer"></span>
+  <div>
+    <a mat-button routerLink="/gallery" class="page-link">Gallery</a>
+    <a mat-button routerLink="/museum" class="page-link">Museum</a>
+  </div>
+  <span class="menu-spacer"></span>
+
+  <form id="search-bar" (ngSubmit)="search()">
+    <button mat-icon-button class="icon" type="submit">
+      <mat-icon>search</mat-icon>
+    </button>
+    <input
+      type="search"
+      #searchInput
+      id="searchbar-input"
+      autocomplete="off"
+      spellcheck="false"
+      placeholder="Search"
+      [(ngModel)]="this.searchQuery"
+      name="search"
+    />
+  </form>
+  <span class="user-properties"></span>
+
+  <button mat-icon-button routerLink="/teams">
+    <img src="../../../../assets/svg-icon/group-icon.svg">
+  </button>
+  <mat-menu #channels="matMenu" class="customize-menu">
+      <channel *ngIf="user" (closeChannelList)="channelToggle.closeMenu()" (click)="$event.stopPropagation();"></channel>
+  </mat-menu>
+  
+  <button mat-icon-button #channelToggle="matMenuTrigger" [matMenuTriggerFor]="channels">
+    <img src="../../../../assets/svg-icon/chat-icon.svg">
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <ngx-avatar [src]="this.user.avatar.imageUrl"></ngx-avatar>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="goToProfile()">
+      <mat-icon>account_circle</mat-icon>
+      <span>View Profile</span>
+    </button>
+    <button mat-menu-item (click)="goToSettings()">
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+

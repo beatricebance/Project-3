@@ -1,0 +1,66 @@
+@use "~@angular/material" as mat;
+
+@include mat.core();
+
+$polydessin-theme-primary: mat.define-palette(mat.$indigo-palette);
+$polydessin-theme-accent: mat.define-palette(mat.$blue-grey-palette);
+$polydessin-theme-theme: mat.define-light-theme(
+  $polydessin-theme-primary,
+  $polydessin-theme-accent
+);
+
+@include mat.all-component-themes($polydessin-theme-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fcedea;
+}
+
+.thumbnail-wrapper {
+  position: relative;
+  width: 100px;
+  height: 400px;
+}
+fa-icon {
+  color: rgba(black, 0.54);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fcedea;
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+  background-color: #da7e70;
+  box-shadow: none;
+}
+
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button {
+  color: #da7e70;
+}
+
+.mat-card:not([class*="mat-elevation-z"]) {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.mat-card {
+  border-radius: 15px;
+  background-color: #fef9f7;
+}

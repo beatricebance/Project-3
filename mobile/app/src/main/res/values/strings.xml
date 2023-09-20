@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">ColorImage</string>
+
+    <!--    Fragments-->
+    <string name="title_teams">Teams</string>
+    <string name="title_gallery">Gallery</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_user">Users</string>
+    <string name="title_museum">Museum</string>
+    <string name="title_user_profile">User Profile</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="new_message">New to ColorImage?</string>
+    <string name="get_started"><u>Get Started</u></string>
+    <string name="existing_account">Already have an account?</string>
+    <string name="login_action"><u>Log In</u></string>
+
+    <string name="required">* Required</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_a_channel_name">Enter a channel name</string>
+    <string name="create_a_new_channel">Create a new channel!</string>
+    <string name="displaynametext">displayNameText</string>
+    <string name="user_image">User Image</string>
+    <string name="username">UserName</string>
+    <string name="new_friend_request" />
+    <string name="accept"> Accept</string>
+    <string name="decline">Decline</string>
+    <string name="new_friends_request">New friend request</string>
+    <string name="Choose_an_avatar"><b>Choose an avatar !</b></string>
+    <string name="choose_an_avatar">Choose an avatar</string>
+    <string name="upload_an_avatar">Upload an avatar</string>
+    <string name="Username"><b>Username</b></string>
+    <string name="customize">UPDATE PROFILE</string>
+    <string name="description"><b>Description</b></string>
+    <string name="first_name"><b>First Name</b></string>
+    <string name="last_name"><b>Last Name</b></string>
+    <string name="last_login"><b>Last Login Date</b></string>
+    <string name="last_logout"><b>Last Logout Date</b></string>
+    <string name="last_edition_date"><b>Last Edition Date</b></string>
+    <string name="confirm_password"><b>Confirm Password</b></string>
+    <string name="new_password"><b>New Password</b></string>
+    <string name="current_password"><b>Current Password</b></string>
+    <string name="change_password">Change Password</string>
+    <string name="edit_password">Edit Password</string>
+    <string name="history_log">Log History</string>
+    <string name="edit_profil">Edit Profile</string>
+    <string name="compte_parameter">ACCOUNT DETAILS</string>
+    <string name="j_aime_le_bbq_korean">j\'aime le bbq korean</string>
+    <string name="de_laroche">De Laroche</string>
+    <string name="jenifer">jenifer</string>
+    <string name="email"><b>Email</b></string>
+    <string name="j_roche_gmail_com">j.roche@gmail.com</string>
+    <string name="update_avatar">UPDATE AVATAR</string>
+    <string name="log_out">Log Out</string>
+    <string name="settings">Settings</string>
+    <string name="view_profile">View Profile</string>
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="display_name">Display name</string>
+
+</resources>

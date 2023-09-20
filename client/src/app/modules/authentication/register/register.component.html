@@ -1,0 +1,116 @@
+<app-authentication-navbar></app-authentication-navbar>
+<body class="register-body">
+  <mat-grid-list cols="2">
+    <mat-grid-tile><mat-card-title></mat-card-title></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card id="register-mat-card">
+        <mat-card-title id="title-card">ColorImage</mat-card-title>
+        <mat-card-title id="register-card">Register</mat-card-title>
+        <mat-card-content>
+          <form
+            [formGroup]="userRegistration"
+            (ngSubmit)="onSubmit()"
+            id="register-form"
+          >
+            <table class="input-table">
+              <tr>
+                <td>
+                  <p>
+                    <mat-form-field appearance="outline" class="form-input">
+                      <mat-label>First Name</mat-label>
+                      <input
+                        type="text"
+                        matInput
+                        placeholder="First name"
+                        formControlName="firstName"
+                      />
+                    </mat-form-field>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <mat-form-field appearance="outline" class="form-input">
+                      <mat-label>Last Name</mat-label>
+                      <input
+                        type="text"
+                        matInput
+                        placeholder="Last Name"
+                        formControlName="lastName"
+                      />
+                    </mat-form-field>
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <p>
+              <mat-form-field appearance="outline" class="form-input">
+                <mat-label>Username</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Username"
+                  formControlName="username"
+                />
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline" class="form-input">
+                <mat-label>Email Address</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Email Address"
+                  formControlName="email"
+                />
+              </mat-form-field>
+            </p>
+
+            <table class="input-table">
+              <tr>
+                <td>
+                  <p>
+                    <mat-form-field appearance="outline" class="form-input">
+                      <mat-label>Password</mat-label>
+                      <input
+                        type="password"
+                        matInput
+                        placeholder="Password"
+                        formControlName="password"
+                      />
+                    </mat-form-field>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <mat-form-field appearance="outline" class="form-input">
+                      <mat-label>Confirm Password</mat-label>
+                      <input
+                        type="password"
+                        matInput
+                        placeholder="Confirm Password"
+                        formControlName="confirmPassword"
+                      />
+                    </mat-form-field>
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <div id="login-redirect">
+              <p>
+                Already have an account?
+                <button mat-button id="login-link" routerLink="/login">
+                  LOG IN
+                </button>
+              </p>
+            </div>
+            <div id="register-button" class="button">
+              <button type="submit" mat-raised-button color="primary">
+                Register
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</body>

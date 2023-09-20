@@ -1,0 +1,97 @@
+.page-link {
+  color: #5b4d5a;
+  font-size: 24px;
+}
+
+.user-properties {
+  flex: 1 1 auto;
+}
+
+#nav-bar {
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  background-color: #fcedea;
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+#nav-bar span div a {
+  font-size: 24px;
+}
+#search-bar {
+  height: 90%;
+  width: 30%;
+  border-radius: 25px;
+  background-color: #fef9f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#searchbar-input {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  margin-right: 20px;
+}
+
+#searchbar-input:focus {
+  outline: none;
+}
+
+#main-logo {
+  color: #924642;
+  font-size: 36px;
+  padding-right: 20px;
+}
+
+#logout-button {
+  color: #924642;
+  font-size: 24px;
+}
+
+#userButton {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background-color: aqua;
+}
+
+#searchBar {
+  height: 90%;
+  width: 40%;
+  border-radius: 25px;
+  background-color: #FEF9F7;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#searchbar-input {
+  border: none;
+  background-color: transparent;
+  width: 90%;
+  margin-right: 20px;
+}
+
+#searchbar-input:focus{
+  outline:none
+}
+
+.icon{
+  color: black;
+}
+#avatar {
+  cursor: pointer;
+}
+
+::ng-deep .mat-menu-panel.customize-menu {
+  background-color: #fef9f7!important;
+  border-radius: 15px;
+  overflow: hidden;
+}
+

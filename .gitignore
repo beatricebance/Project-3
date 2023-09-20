@@ -1,0 +1,19 @@
+#ignoring .vscode folder but we keep some files for debuging
+/.vscode/chrome
+/.vs/
+
+out/
+
+# Keep the package-lock.json !
+!client/package-lock.json
+!server/package-lock.json
+server/key.json
+**/key.json
+**/package-lock.json
+**/mobile/.project
+
+**/.DS_Store
+**/*.lock
+coverage
+/*/node_modules
+*/.idea/

@@ -1,0 +1,68 @@
+<mat-card class="drawing">
+  <img
+    alt=""
+    [src]="getSanitizedUrl(drawing.dataUri)"
+    width="100%"
+    height="100%"
+    class="drawing-img"
+  />
+
+  <div class="drawing-overlay">
+    <mat-card-title>
+      <div class="drawing-name" (click)="goToDrawing()">
+        {{ drawing.name }}
+      </div>
+
+      <p class="drawing-creation-date">{{ drawing.createdAt.toString() }}</p>
+    </mat-card-title>
+    <p class="drawing-lock" *ngIf="isProtected()">
+      <mat-icon inline="true">lock</mat-icon>
+    </p>
+    <mat-card-content>
+      <div class="drawing-menu" *ngIf="isOwner()">
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon button with a vertical three dot icon"
+        >
+          <mat-icon id="settings-icon">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="openEditDrawingParametersDialog()">
+            <span>Edit parameters</span>
+          </button>
+          <button mat-menu-item><span>Delete</span></button>
+        </mat-menu>
+      </div>
+      <p class="drawing-privacy-level">
+        {{ capitalizeFirstLetter(drawing.privacyLevel) }}
+      </p>
+      <div
+        class="drawing-owner"
+        *ngIf="isUser(drawing.owner)"
+        (click)="goToUserProfile()"
+      >
+        <ngx-avatar
+          [src]="$any(drawing.owner).avatar.imageUrl"
+          class="inline-block-child"
+        ></ngx-avatar>
+        <span class="inline-block-child name">{{
+          $any(drawing.owner).username
+        }}</span>
+      </div>
+      <div
+        class="drawing-owner"
+        *ngIf="isTeam(drawing.owner)"
+        (click)="goToTeamProfile()"
+      >
+        <ngx-avatar
+          [name]="$any(drawing.owner).name"
+          class="inline-block-child"
+        ></ngx-avatar>
+        <span class="inline-block-child name">{{
+          $any(drawing.owner).name
+        }}</span>
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card>

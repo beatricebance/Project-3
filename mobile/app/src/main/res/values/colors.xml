@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+<!--    custom colors-->
+    <color name="userLog">#6d6875</color>
+    <color name="chatSend">#b5838d</color>
+    <color name="ownChat">#056162</color>
+    <color name="otherChat">#c2c5aa</color>
+
+    <color name="mainTheme">#FCEDEA</color>
+    <color name="navItemColor">#5B4D5A</color>
+    <color name="mainColor">#000000</color>
+    <color name="titleColor">#924642</color>
+    <color name="container">#FEF9F7</color>
+    <color name="primary">#DA7E70</color>
+    <color name="red">#FF4040</color>
+
+    <color name="danger">#ffc1ce</color>
+    <color name="dangerText">#762a3b</color>
+
+    <color name="delete">#de000d</color>
+</resources>

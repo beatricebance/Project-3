@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/galleryFragment"
+        android:icon="@drawable/ic_brush"
+        android:title="@string/title_gallery" />
+
+    <item
+        android:id="@+id/chatFragment"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/title_chat"/>
+
+    <item
+        android:id="@+id/teamsFragment"
+        android:icon="@drawable/ic_teams"
+        android:title="@string/title_teams" />
+
+    <item
+        android:id="@+id/usersFragment"
+        android:icon="@drawable/ic_person"
+        android:title="@string/title_user" />
+    <item
+        android:id="@+id/museumFragment"
+        android:icon="@drawable/ic_museum"
+        android:title="@string/title_museum" />
+
+</menu>
