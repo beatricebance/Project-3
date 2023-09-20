@@ -23,13 +23,16 @@
 
 ## table des matières
 
-- [Description du projet](#description-projet)
-  - [Technologies utilisées](#technologies-utilisees)
-- [Démarrer le projet](#demarrer-le-projet)
-  - [Prérequis](#prerequis)
-  - [Installation](#installation)
-- [Utilisation](#usage)
-- [Dépendances](#dependences)
+- [ ](#)
+- [table des matières](#table-des-matières)
+- [description-projet](#description-projet)
+  - [technologies-utilisees](#technologies-utilisees)
+- [demarrer-le-projet](#demarrer-le-projet)
+  - [prerequis](#prerequis)
+  - [installation](#installation)
+  - [lancement](#lancement)
+- [usage](#usage)
+- [dépendances](#dépendances)
 
 <!-- ABOUT THE PROJECT -->
 
